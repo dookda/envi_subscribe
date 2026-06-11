@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { ServiceRecord } from "@prisma/client";
 import { format } from "date-fns";
-import { deleteServiceRecord, updateServiceRecord } from "@/lib/actions";
+import { deleteServiceRecord, updateServiceRecord } from "@/lib/db/actions";
 import { Button } from "@/components/ui/button";
 
 const statusColors: Record<string, string> = {
@@ -58,11 +58,10 @@ export default function ServiceRecordList({
                   type="button"
                   onClick={() => handleStatusChange(record.id, status)}
                   disabled={updatingId === record.id}
-                  className={`rounded-full px-2 py-0.5 text-xs transition-opacity ${
-                    record.status === status
+                  className={`rounded-full px-2 py-0.5 text-xs transition-opacity ${record.status === status
                       ? `${statusColors[status]} font-medium`
                       : "bg-slate-100 text-slate-400 hover:opacity-80"
-                  }`}
+                    }`}
                 >
                   {status}
                 </button>

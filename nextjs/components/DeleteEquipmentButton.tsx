@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { archiveEquipment } from "@/lib/actions";
+import { archiveEquipment } from "@/lib/db/actions";
 import { Button } from "@/components/ui/button";
 
 export default function DeleteEquipmentButton({ id }: { id: string }) {

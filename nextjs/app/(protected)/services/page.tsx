@@ -5,7 +5,7 @@ import { auth } from "@/auth";
 import AddServiceFromEquipment from "@/components/AddServiceFromEquipment";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { prisma } from "@/lib/prisma";
+import { prisma } from "@/lib/db/prisma";
 
 export const dynamic = "force-dynamic";
 
@@ -86,13 +86,12 @@ export default async function ServicesPage({
                     {record.notes ? <p className="mt-1 text-xs text-slate-500">{record.notes}</p> : null}
                   </div>
                   <span
-                    className={`ml-2 shrink-0 rounded-full px-2 py-0.5 text-xs ${
-                      record.status === "COMPLETED"
+                    className={`ml-2 shrink-0 rounded-full px-2 py-0.5 text-xs ${record.status === "COMPLETED"
                         ? "bg-green-50 text-green-700"
                         : record.status === "CANCELLED"
                           ? "bg-red-50 text-red-700"
                           : "bg-blue-50 text-blue-700"
-                    }`}
+                      }`}
                   >
                     {record.status}
                   </span>

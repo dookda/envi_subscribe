@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { createServiceRecord } from "@/lib/actions";
+import { createServiceRecord } from "@/lib/db/actions";
 import { Button } from "@/components/ui/button";
 
 interface Props {

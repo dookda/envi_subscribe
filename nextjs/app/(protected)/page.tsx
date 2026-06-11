@@ -6,8 +6,8 @@ import { auth } from "@/auth";
 import EquipmentCard from "@/components/EquipmentCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { prisma } from "@/lib/prisma";
-import { filterSchema } from "@/lib/schemas";
+import { prisma } from "@/lib/db/prisma";
+import { filterSchema } from "@/lib/validation/schemas";
 
 export const dynamic = "force-dynamic";
 

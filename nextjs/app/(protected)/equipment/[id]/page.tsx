@@ -7,7 +7,7 @@ import DeleteEquipmentButton from "@/components/DeleteEquipmentButton";
 import EquipmentForm from "@/components/EquipmentForm";
 import ServiceRecordList from "@/components/ServiceRecordList";
 import { Button } from "@/components/ui/button";
-import { prisma } from "@/lib/prisma";
+import { prisma } from "@/lib/db/prisma";
 
 export default async function EquipmentDetailPage({ params }: { params: Promise<{ id: string }> }) {
   noStore();
