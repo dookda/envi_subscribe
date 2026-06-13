@@ -1,0 +1,19 @@
+{
+  "node": {
+    "0093a72ee7fa577b51880e7bc6aca8847529d47c88": {
+      "workers": {
+        "app/login/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Fapp%2Flogin%2Fpage.tsx%22%2C%5B%7B%22id%22%3A%220093a72ee7fa577b51880e7bc6aca8847529d47c88%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%2C%22filename%22%3A%22app%2Flogin%2Fpage.tsx%22%7D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/login/page": "rsc"
+      },
+      "filename": "app/login/page.tsx",
+      "exportedName": "$$RSC_SERVER_ACTION_0"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "8L6QzHNJGnGX1OsoInZquSJ2KF58YRaputOGUCATvyE="
+}
