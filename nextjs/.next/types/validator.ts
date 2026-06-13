@@ -47,86 +47,68 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 }
 
 
-// Validate ../../app/page.tsx
+// Validate ../../app/(protected)/equipment/[id]/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/equipment/[id]">> = Specific
+  const handler = {} as typeof import("../../app/(protected)/equipment/[id]/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/(protected)/equipment/new/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/equipment/new">> = Specific
+  const handler = {} as typeof import("../../app/(protected)/equipment/new/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/(protected)/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific
-  const handler = {} as typeof import("../../app/page.js")
+  const handler = {} as typeof import("../../app/(protected)/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../app/store/(protected)/equipment/[id]/page.tsx
+// Validate ../../app/login/page.tsx
 {
-  type __IsExpected<Specific extends AppPageConfig<"/store/equipment/[id]">> = Specific
-  const handler = {} as typeof import("../../app/store/(protected)/equipment/[id]/page.js")
+  type __IsExpected<Specific extends AppPageConfig<"/login">> = Specific
+  const handler = {} as typeof import("../../app/login/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../app/store/(protected)/equipment/new/page.tsx
+// Validate ../../app/api/auth/[...nextauth]/route.ts
 {
-  type __IsExpected<Specific extends AppPageConfig<"/store/equipment/new">> = Specific
-  const handler = {} as typeof import("../../app/store/(protected)/equipment/new/page.js")
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/auth/[...nextauth]">> = Specific
+  const handler = {} as typeof import("../../app/api/auth/[...nextauth]/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../app/store/(protected)/page.tsx
+
+
+
+
+// Validate ../../app/(protected)/layout.tsx
 {
-  type __IsExpected<Specific extends AppPageConfig<"/store">> = Specific
-  const handler = {} as typeof import("../../app/store/(protected)/page.js")
+  type __IsExpected<Specific extends LayoutConfig<"/">> = Specific
+  const handler = {} as typeof import("../../app/(protected)/layout.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
-
-// Validate ../../app/store/login/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/store/login">> = Specific
-  const handler = {} as typeof import("../../app/store/login/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../app/store/api/auth/[...nextauth]/route.ts
-{
-  type __IsExpected<Specific extends RouteHandlerConfig<"/store/api/auth/[...nextauth]">> = Specific
-  const handler = {} as typeof import("../../app/store/api/auth/[...nextauth]/route.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-
-
-
 
 // Validate ../../app/layout.tsx
 {
   type __IsExpected<Specific extends LayoutConfig<"/">> = Specific
   const handler = {} as typeof import("../../app/layout.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../app/store/(protected)/layout.tsx
-{
-  type __IsExpected<Specific extends LayoutConfig<"/store">> = Specific
-  const handler = {} as typeof import("../../app/store/(protected)/layout.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../app/store/layout.tsx
-{
-  type __IsExpected<Specific extends LayoutConfig<"/store">> = Specific
-  const handler = {} as typeof import("../../app/store/layout.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

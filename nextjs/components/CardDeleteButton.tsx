@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { deleteEquipment } from "@/lib/db/actions";
-import { BASE_PATH } from "@/lib/base-path";
 import { useLang } from "@/components/LangProvider";
 
 export default function CardDeleteButton({ id, variant = "icon" }: { id: string; variant?: "icon" | "full" }) {
@@ -21,7 +20,7 @@ export default function CardDeleteButton({ id, variant = "icon" }: { id: string;
     await deleteEquipment(id);
     setLoading(false);
 
-    if (variant === "full") router.push(BASE_PATH);
+    if (variant === "full") router.push("/");
     router.refresh();
   };
 

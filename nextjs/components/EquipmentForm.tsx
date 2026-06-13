@@ -1,14 +1,12 @@
 "use client";
 
 import { useState, useRef, type FormEvent, type ChangeEvent } from "react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import type { EquipmentItem } from "@prisma/client";
 import { createEquipment, updateEquipment } from "@/lib/db/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { BASE_PATH } from "@/lib/base-path";
 import LocationPicker from "@/components/LocationPicker";
 import { useLang } from "@/components/LangProvider";
 
@@ -56,7 +54,7 @@ export default function EquipmentForm({ equipment }: Props) {
       return;
     }
 
-    router.push(equipment ? `${BASE_PATH}/equipment/${equipment.id}` : BASE_PATH);
+    router.push(equipment ? `/equipment/${equipment.id}` : "/");
     router.refresh();
   };
 
@@ -134,7 +132,12 @@ export default function EquipmentForm({ equipment }: Props) {
         </Label>
         {preview ? (
           <div className="mb-2 relative aspect-video w-full rounded-xl border border-slate-200 bg-slate-50 dark:border-slate-600 dark:bg-slate-700">
-            <Image src={preview} alt="Equipment preview" fill className="object-contain" unoptimized />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={preview.startsWith("blob:") ? preview : `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${preview}`}
+              alt="Equipment preview"
+              className="absolute inset-0 h-full w-full object-contain"
+            />
             <button
               type="button"
               onClick={() => { setPreview(null); if (fileRef.current) fileRef.current.value = ""; }}

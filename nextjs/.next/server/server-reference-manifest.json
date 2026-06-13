@@ -1,98 +1,63 @@
 {
   "node": {
-    "00c2526e6700c9fcc1aa32c9caf121c2822762fb3e": {
+    "00e08e0ff85dad03cbf7f46089d86816ca5a175751": {
       "workers": {
-        "app/store/(protected)/page": {
-          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Fcomponents%2FHeader.tsx%22%2C%5B%7B%22id%22%3A%2200c2526e6700c9fcc1aa32c9caf121c2822762fb3e%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%2C%22filename%22%3A%22components%2FHeader.tsx%22%7D%5D%5D%5D&__client_imported__=!",
+        "app/(protected)/equipment/[id]/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Fcomponents%2FHeader.tsx%22%2C%5B%7B%22id%22%3A%2200e08e0ff85dad03cbf7f46089d86816ca5a175751%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%2C%22filename%22%3A%22components%2FHeader.tsx%22%7D%5D%5D%5D&__client_imported__=!",
           "async": false
         },
-        "app/store/(protected)/equipment/[id]/page": {
-          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Fcomponents%2FHeader.tsx%22%2C%5B%7B%22id%22%3A%2200c2526e6700c9fcc1aa32c9caf121c2822762fb3e%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%2C%22filename%22%3A%22components%2FHeader.tsx%22%7D%5D%5D%5D&__client_imported__=!",
-          "async": false
-        },
-        "app/store/(protected)/equipment/new/page": {
-          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Fcomponents%2FHeader.tsx%22%2C%5B%7B%22id%22%3A%2200c2526e6700c9fcc1aa32c9caf121c2822762fb3e%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%2C%22filename%22%3A%22components%2FHeader.tsx%22%7D%5D%5D%5D&__client_imported__=!",
+        "app/(protected)/page": {
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Fcomponents%2FHeader.tsx%22%2C%5B%7B%22id%22%3A%2200e08e0ff85dad03cbf7f46089d86816ca5a175751%22%2C%22exportedName%22%3A%22%24%24RSC_SERVER_ACTION_0%22%2C%22filename%22%3A%22components%2FHeader.tsx%22%7D%5D%5D%5D&__client_imported__=!",
           "async": false
         }
       },
       "layer": {
-        "app/store/(protected)/page": "rsc",
-        "app/store/(protected)/equipment/[id]/page": "rsc",
-        "app/store/(protected)/equipment/new/page": "rsc"
+        "app/(protected)/equipment/[id]/page": "rsc",
+        "app/(protected)/page": "rsc"
       },
       "filename": "components/Header.tsx",
       "exportedName": "$$RSC_SERVER_ACTION_0"
     },
-    "402611618ade3c89c11a5b744cc3f234e7a6be466e": {
+    "40184320234cf67fae179d896ae1f3b2d9719801c6": {
       "workers": {
-        "app/store/(protected)/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Flib%2Fdb%2Factions.ts%22%2C%5B%7B%22id%22%3A%22402611618ade3c89c11a5b744cc3f234e7a6be466e%22%2C%22exportedName%22%3A%22deleteEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2240e06dc0adc386528b1829150321024cffe2e71bad%22%2C%22exportedName%22%3A%22createEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%226063e7350988be4ddff995c3a33dea83bf53c290e7%22%2C%22exportedName%22%3A%22updateEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/store/(protected)/equipment/[id]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Flib%2Fdb%2Factions.ts%22%2C%5B%7B%22id%22%3A%22402611618ade3c89c11a5b744cc3f234e7a6be466e%22%2C%22exportedName%22%3A%22deleteEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2240e06dc0adc386528b1829150321024cffe2e71bad%22%2C%22exportedName%22%3A%22createEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%226063e7350988be4ddff995c3a33dea83bf53c290e7%22%2C%22exportedName%22%3A%22updateEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/store/(protected)/equipment/new/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Flib%2Fdb%2Factions.ts%22%2C%5B%7B%22id%22%3A%22402611618ade3c89c11a5b744cc3f234e7a6be466e%22%2C%22exportedName%22%3A%22deleteEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2240e06dc0adc386528b1829150321024cffe2e71bad%22%2C%22exportedName%22%3A%22createEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%226063e7350988be4ddff995c3a33dea83bf53c290e7%22%2C%22exportedName%22%3A%22updateEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
+        "app/(protected)/equipment/[id]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Flib%2Fdb%2Factions.ts%22%2C%5B%7B%22id%22%3A%2240184320234cf67fae179d896ae1f3b2d9719801c6%22%2C%22exportedName%22%3A%22deleteEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2240b93cfb75f697ac112f07d25c62e47d17b9560c01%22%2C%22exportedName%22%3A%22createEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2260f3d683734840bb164320ac1350df6cb0901806d0%22%2C%22exportedName%22%3A%22updateEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
-        "app/store/(protected)/page": "action-browser",
-        "app/store/(protected)/equipment/[id]/page": "action-browser",
-        "app/store/(protected)/equipment/new/page": "action-browser"
+        "app/(protected)/equipment/[id]/page": "action-browser"
       },
       "filename": "lib/db/actions.ts",
       "exportedName": "deleteEquipment"
     },
-    "40e06dc0adc386528b1829150321024cffe2e71bad": {
+    "40b93cfb75f697ac112f07d25c62e47d17b9560c01": {
       "workers": {
-        "app/store/(protected)/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Flib%2Fdb%2Factions.ts%22%2C%5B%7B%22id%22%3A%22402611618ade3c89c11a5b744cc3f234e7a6be466e%22%2C%22exportedName%22%3A%22deleteEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2240e06dc0adc386528b1829150321024cffe2e71bad%22%2C%22exportedName%22%3A%22createEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%226063e7350988be4ddff995c3a33dea83bf53c290e7%22%2C%22exportedName%22%3A%22updateEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/store/(protected)/equipment/[id]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Flib%2Fdb%2Factions.ts%22%2C%5B%7B%22id%22%3A%22402611618ade3c89c11a5b744cc3f234e7a6be466e%22%2C%22exportedName%22%3A%22deleteEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2240e06dc0adc386528b1829150321024cffe2e71bad%22%2C%22exportedName%22%3A%22createEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%226063e7350988be4ddff995c3a33dea83bf53c290e7%22%2C%22exportedName%22%3A%22updateEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/store/(protected)/equipment/new/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Flib%2Fdb%2Factions.ts%22%2C%5B%7B%22id%22%3A%22402611618ade3c89c11a5b744cc3f234e7a6be466e%22%2C%22exportedName%22%3A%22deleteEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2240e06dc0adc386528b1829150321024cffe2e71bad%22%2C%22exportedName%22%3A%22createEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%226063e7350988be4ddff995c3a33dea83bf53c290e7%22%2C%22exportedName%22%3A%22updateEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
+        "app/(protected)/equipment/[id]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Flib%2Fdb%2Factions.ts%22%2C%5B%7B%22id%22%3A%2240184320234cf67fae179d896ae1f3b2d9719801c6%22%2C%22exportedName%22%3A%22deleteEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2240b93cfb75f697ac112f07d25c62e47d17b9560c01%22%2C%22exportedName%22%3A%22createEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2260f3d683734840bb164320ac1350df6cb0901806d0%22%2C%22exportedName%22%3A%22updateEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
-        "app/store/(protected)/page": "action-browser",
-        "app/store/(protected)/equipment/[id]/page": "action-browser",
-        "app/store/(protected)/equipment/new/page": "action-browser"
+        "app/(protected)/equipment/[id]/page": "action-browser"
       },
       "filename": "lib/db/actions.ts",
       "exportedName": "createEquipment"
     },
-    "6063e7350988be4ddff995c3a33dea83bf53c290e7": {
+    "60f3d683734840bb164320ac1350df6cb0901806d0": {
       "workers": {
-        "app/store/(protected)/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Flib%2Fdb%2Factions.ts%22%2C%5B%7B%22id%22%3A%22402611618ade3c89c11a5b744cc3f234e7a6be466e%22%2C%22exportedName%22%3A%22deleteEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2240e06dc0adc386528b1829150321024cffe2e71bad%22%2C%22exportedName%22%3A%22createEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%226063e7350988be4ddff995c3a33dea83bf53c290e7%22%2C%22exportedName%22%3A%22updateEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/store/(protected)/equipment/[id]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Flib%2Fdb%2Factions.ts%22%2C%5B%7B%22id%22%3A%22402611618ade3c89c11a5b744cc3f234e7a6be466e%22%2C%22exportedName%22%3A%22deleteEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2240e06dc0adc386528b1829150321024cffe2e71bad%22%2C%22exportedName%22%3A%22createEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%226063e7350988be4ddff995c3a33dea83bf53c290e7%22%2C%22exportedName%22%3A%22updateEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/store/(protected)/equipment/new/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Flib%2Fdb%2Factions.ts%22%2C%5B%7B%22id%22%3A%22402611618ade3c89c11a5b744cc3f234e7a6be466e%22%2C%22exportedName%22%3A%22deleteEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2240e06dc0adc386528b1829150321024cffe2e71bad%22%2C%22exportedName%22%3A%22createEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%226063e7350988be4ddff995c3a33dea83bf53c290e7%22%2C%22exportedName%22%3A%22updateEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
+        "app/(protected)/equipment/[id]/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fapp%2Flib%2Fdb%2Factions.ts%22%2C%5B%7B%22id%22%3A%2240184320234cf67fae179d896ae1f3b2d9719801c6%22%2C%22exportedName%22%3A%22deleteEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2240b93cfb75f697ac112f07d25c62e47d17b9560c01%22%2C%22exportedName%22%3A%22createEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%2C%7B%22id%22%3A%2260f3d683734840bb164320ac1350df6cb0901806d0%22%2C%22exportedName%22%3A%22updateEquipment%22%2C%22filename%22%3A%22lib%2Fdb%2Factions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
       "layer": {
-        "app/store/(protected)/page": "action-browser",
-        "app/store/(protected)/equipment/[id]/page": "action-browser",
-        "app/store/(protected)/equipment/new/page": "action-browser"
+        "app/(protected)/equipment/[id]/page": "action-browser"
       },
       "filename": "lib/db/actions.ts",
       "exportedName": "updateEquipment"
     }
   },
   "edge": {},
-  "encryptionKey": "LaK1dZxaq90BJmQcqSWt/8wQt5C6iBURRJ6GIHiyAVE="
+  "encryptionKey": "cZ9aUaoYS6iED8vRAeBgmgDz1v3UUyIJFWN1w07x7Eo="
 }

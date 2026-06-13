@@ -359,12 +359,12 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	border-radius: 5px;
 	}
 .leaflet-control-layers-toggle {
-	background-image: url(/_next/static/media/layers.ef6db872.png);
+	background-image: url(/store/_next/static/media/layers.ef6db872.png);
 	width: 36px;
 	height: 36px;
 	}
 .leaflet-retina .leaflet-control-layers-toggle {
-	background-image: url(/_next/static/media/layers-2x.9859cd12.png);
+	background-image: url(/store/_next/static/media/layers-2x.9859cd12.png);
 	background-size: 26px 26px;
 	}
 .leaflet-touch .leaflet-control-layers-toggle {
@@ -407,7 +407,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 /* Default icon URLs */
 .leaflet-default-icon-path { /* used only in path-guessing heuristic, see L.Icon.Default */
-	background-image: url(/_next/static/media/marker-icon.d577052a.png);
+	background-image: url(/store/_next/static/media/marker-icon.d577052a.png);
 	}
 
 

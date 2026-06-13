@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { EquipmentItem } from "@prisma/client";
-import { BASE_PATH } from "@/lib/base-path";
 
 interface Props {
   item: EquipmentItem;
@@ -18,7 +17,7 @@ function RemainDays({ expiredAt }: { expiredAt: Date }) {
 
 export default function EquipmentCard({ item }: Props) {
   return (
-    <Link href={`${BASE_PATH}/equipment/${item.id}`}>
+    <Link href={`/equipment/${item.id}`}>
       <div className="relative rounded-2xl border border-slate-100 bg-white transition-shadow hover:shadow-sm overflow-hidden dark:border-slate-700 dark:bg-slate-800">
 
         {item.inUse ? (
@@ -29,7 +28,7 @@ export default function EquipmentCard({ item }: Props) {
 
         {item.image ? (
           <div className="relative aspect-video w-full bg-slate-100">
-            <Image src={item.image} alt={item.equipmentName} fill className="object-contain" unoptimized />
+            <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${item.image}`} alt={item.equipmentName} fill className="object-contain" unoptimized />
           </div>
         ) : null}
         <div className="p-4">

@@ -3,13 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { BASE_PATH } from "@/lib/base-path";
 
 const tabs = [
   {
-    href: BASE_PATH,
+    href: "/",
     label: "Equipment",
-    match: (pathname: string) => pathname === BASE_PATH || pathname.startsWith(`${BASE_PATH}/equipment`),
+    match: (pathname: string) => pathname === "/" || pathname.startsWith("/equipment"),
   },
 ];
 

@@ -3,7 +3,6 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
-import { BASE_PATH } from "@/lib/base-path";
 import { useLang } from "@/components/LangProvider";
 
 export default function SearchInput({ defaultValue }: { defaultValue?: string }) {
@@ -36,7 +35,7 @@ export default function SearchInput({ defaultValue }: { defaultValue?: string })
       } else {
         params.delete("search");
       }
-      router.replace(`${BASE_PATH}?${params.toString()}`);
+      router.replace(`/?${params.toString()}`);
     }, 400);
 
     return () => { if (timer.current) clearTimeout(timer.current); };
