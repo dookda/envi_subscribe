@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import { cookies } from "next/headers";
 import "../globals.css";
+import { LangProvider } from "@/components/LangProvider";
+import type { Lang } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "ENVIR Store",
@@ -12,14 +15,14 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
-export default function SubscribeLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function SubscribeLayout({ children }: { children: React.ReactNode }) {
+  const lang = ((await cookies()).get("lang")?.value ?? "th") as Lang;
+
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 antialiased">
-      {children}
-    </div>
+    <LangProvider initial={lang}>
+      <div className="min-h-screen bg-slate-50 text-slate-900 antialiased dark:bg-slate-900 dark:text-slate-100">
+        {children}
+      </div>
+    </LangProvider>
   );
 }

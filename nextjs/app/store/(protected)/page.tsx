@@ -2,14 +2,16 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { unstable_noStore as noStore } from "next/cache";
+import { cookies } from "next/headers";
 import { Prisma } from "@prisma/client";
 import { auth } from "@/auth";
 import { BASE_PATH, LOGIN_PATH } from "@/lib/base-path";
 import EquipmentCard from "@/components/EquipmentCard";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { prisma } from "@/lib/db/prisma";
 import { filterSchema } from "@/lib/validation/schemas";
+import { getT, type Lang } from "@/lib/i18n";
+import SearchInput from "@/components/SearchInput";
 
 export const dynamic = "force-dynamic";
 
@@ -22,11 +24,13 @@ async function EquipmentList({
   search,
   sortBy,
   sortDir,
+  t,
 }: {
   userId: string;
   search?: string;
   sortBy: "equipmentName" | "createdAt";
   sortDir: "asc" | "desc";
+  t: ReturnType<typeof getT>;
 }) {
   const where: Prisma.EquipmentItemWhereInput = { userId, isArchived: false };
 
@@ -46,10 +50,10 @@ async function EquipmentList({
   if (items.length === 0) {
     return (
       <div className="py-12 text-center">
-        <p className="text-sm text-slate-400">No equipment found.</p>
+        <p className="text-sm text-slate-400">{t.noEquipment}</p>
         <Link href={`${BASE_PATH}/equipment/new`}>
           <Button className="mt-4 rounded-xl" size="sm">
-            Add your first equipment
+            {t.addFirst}
           </Button>
         </Link>
       </div>
@@ -71,8 +75,12 @@ export default async function HomePage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   noStore();
-  const [session, rawParams] = await Promise.all([auth(), searchParams]);
+  const [session, rawParams, jar] = await Promise.all([auth(), searchParams, cookies()]);
   if (!session?.user?.id) redirect(LOGIN_PATH);
+
+  const lang = (jar.get("lang")?.value ?? "th") as Lang;
+  const t = getT(lang);
+
   const parsed = filterSchema.safeParse({
     search: getString(rawParams.search),
     sortBy: getString(rawParams.sortBy),
@@ -83,37 +91,33 @@ export default async function HomePage({
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-bold text-slate-800">Equipment</h1>
+        <h1 className="text-xl font-bold text-slate-800 dark:text-slate-100">{t.equipment}</h1>
         <Link href={`${BASE_PATH}/equipment/new`}>
-          <Button className="rounded-xl text-sm" size="sm">
-            + Add
+          <Button className="flex items-center gap-1 rounded-xl text-sm" size="sm">
+            <span className="material-icons select-none text-[16px] leading-none">add</span>
+            {t.register}
           </Button>
         </Link>
       </div>
 
-      <form className="flex gap-2">
-        <Input
-          name="search"
-          placeholder="Search name, model, customer..."
-          defaultValue={filters.search}
-          className="flex-1 rounded-xl border-slate-200 bg-white"
-        />
-        <Button type="submit" variant="outline" className="rounded-xl border-slate-200" size="sm">
-          Filter
-        </Button>
+      <div className="flex gap-2">
+        <Suspense fallback={null}>
+          <SearchInput defaultValue={filters.search} />
+        </Suspense>
         <Link href={BASE_PATH}>
           <Button variant="ghost" className="rounded-xl text-slate-400" size="sm">
-            Clear
+            {t.clear}
           </Button>
         </Link>
-      </form>
+      </div>
 
-      <Suspense fallback={<div className="py-8 text-center text-sm text-slate-400">Loading...</div>}>
+      <Suspense fallback={<div className="py-8 text-center text-sm text-slate-400">{t.loading}</div>}>
         <EquipmentList
           userId={session.user.id}
           search={filters.search}
           sortBy={filters.sortBy}
           sortDir={filters.sortDir}
+          t={t}
         />
       </Suspense>
     </div>

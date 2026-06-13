@@ -64,6 +64,9 @@ CREATE TABLE public."EquipmentItem" (
     location        text NOT NULL,
     image           text,
     "installedAt"   timestamp(3) without time zone,
+    "expiredAt"     timestamp(3) without time zone,
+    latitude        double precision,
+    longitude       double precision,
     "isArchived"    boolean DEFAULT false NOT NULL,
     "archivedAt"    timestamp(3) without time zone,
     "createdAt"     timestamp(3) without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -155,4 +158,12 @@ VALUES
 
     ('f2a3b4c5-d6e7-8901-bcde-f12345678901',
      'a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2',
-     now(), '20260613140000_add_installed_at', NULL, NULL, now(), 1);
+     now(), '20260613140000_add_installed_at', NULL, NULL, now(), 1),
+
+    ('a3b4c5d6-e7f8-9012-cdef-123456789012',
+     'b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3',
+     now(), '20260613150000_add_expired_at', NULL, NULL, now(), 1),
+
+    ('b4c5d6e7-f8a9-0123-defa-234567890123',
+     'c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4',
+     now(), '20260613160000_add_lat_lng', NULL, NULL, now(), 1);

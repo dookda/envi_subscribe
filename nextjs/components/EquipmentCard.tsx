@@ -2,27 +2,46 @@ import Link from "next/link";
 import Image from "next/image";
 import type { EquipmentItem } from "@prisma/client";
 import { BASE_PATH } from "@/lib/base-path";
+import CardDeleteButton from "@/components/CardDeleteButton";
 
 interface Props {
   item: EquipmentItem;
 }
 
+function RemainDays({ expiredAt }: { expiredAt: Date }) {
+  const days = Math.ceil((expiredAt.getTime() - Date.now()) / 86_400_000);
+  const icon = <span className="material-icons select-none text-[14px] leading-none">schedule</span>;
+  if (days > 30) return <p className="flex items-center gap-1 text-xs text-green-600">{icon} เหลืออีก {days} วัน</p>;
+  if (days > 0) return <p className="flex items-center gap-1 text-xs text-amber-500">{icon} เหลืออีก {days} วัน</p>;
+  if (days === 0) return <p className="flex items-center gap-1 text-xs text-red-500">{icon} วันนี้</p>;
+  return <p className="flex items-center gap-1 text-xs text-red-500">{icon} เกินกำหนด {Math.abs(days)} วัน</p>;
+}
+
 export default function EquipmentCard({ item }: Props) {
   return (
     <Link href={`${BASE_PATH}/equipment/${item.id}`}>
-      <div className="rounded-2xl border border-slate-100 bg-white transition-shadow hover:shadow-sm overflow-hidden">
+      <div className="relative rounded-2xl border border-slate-100 bg-white transition-shadow hover:shadow-sm overflow-hidden dark:border-slate-700 dark:bg-slate-800">
+        <CardDeleteButton id={item.id} />
         {item.image ? (
           <div className="relative aspect-video w-full bg-slate-100">
             <Image src={item.image} alt={item.equipmentName} fill className="object-contain" unoptimized />
           </div>
         ) : null}
         <div className="p-4">
-          <p className="truncate font-semibold text-slate-800">{item.equipmentName}</p>
-          <p className="mt-0.5 text-xs text-slate-400">{item.model}</p>
+          <p className="truncate font-semibold text-slate-800 dark:text-slate-100">{item.equipmentName}</p>
+          <p className="mt-0.5 text-xs text-slate-400 dark:text-slate-500">{item.model}</p>
           <div className="mt-3 space-y-1">
-            <p className="text-xs text-slate-500">👤 {item.customerName}</p>
-            <p className="text-xs text-slate-500">📍 {item.location}</p>
-            <p className="text-xs text-slate-500">🗓 {new Date(item.installedAt ?? item.createdAt).toLocaleDateString("th-TH", { year: "numeric", month: "short", day: "numeric" })}</p>
+            <p className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
+              <span className="material-icons select-none text-[14px] leading-none">person</span>
+              {item.customerName}
+            </p>
+            <p className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
+              <span className="material-icons select-none text-[14px] leading-none">location_on</span>
+              {item.latitude != null && item.longitude != null
+                ? `${item.latitude.toFixed(5)}, ${item.longitude.toFixed(5)}`
+                : item.location}
+            </p>
+            {item.expiredAt ? <RemainDays expiredAt={item.expiredAt} /> : null}
           </div>
         </div>
       </div>

@@ -32,6 +32,9 @@ export async function createEquipment(formData: FormData) {
         customerName: formData.get("customerName"),
         location: formData.get("location"),
         installedAt: formData.get("installedAt") || undefined,
+        expiredAt: formData.get("expiredAt") || undefined,
+        latitude: formData.get("latitude") || undefined,
+        longitude: formData.get("longitude") || undefined,
     };
     const result = equipmentSchema.safeParse(raw);
     if (!result.success) return { error: result.error.flatten().fieldErrors };
@@ -55,6 +58,9 @@ export async function updateEquipment(id: string, formData: FormData) {
         customerName: formData.get("customerName"),
         location: formData.get("location"),
         installedAt: formData.get("installedAt") || undefined,
+        expiredAt: formData.get("expiredAt") || undefined,
+        latitude: formData.get("latitude") || undefined,
+        longitude: formData.get("longitude") || undefined,
     };
     const result = equipmentSchema.safeParse(raw);
     if (!result.success) return { error: result.error.flatten().fieldErrors };
@@ -77,25 +83,16 @@ export async function updateEquipment(id: string, formData: FormData) {
     return { success: true };
 }
 
-export async function archiveEquipment(id: string) {
+export async function deleteEquipment(id: string) {
     const session = await getSession();
     const item = await prisma.equipmentItem.findFirst({
-        where: { id, userId: session.user.id, isArchived: false },
+        where: { id, userId: session.user.id },
     });
     if (!item) return { error: { _form: ["Equipment not found"] } };
 
-    await prisma.equipmentItem.update({
-        where: { id },
-        data: {
-            isArchived: true,
-            archivedAt: new Date(Date.UTC(
-                new Date().getUTCFullYear(),
-                new Date().getUTCMonth(),
-                new Date().getUTCDate(),
-            )),
-        },
-    });
+    await prisma.equipmentItem.delete({ where: { id } });
 
     revalidatePath(BASE_PATH);
     return { success: true };
 }
+

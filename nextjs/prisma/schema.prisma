@@ -64,6 +64,9 @@ model EquipmentItem {
   location       String
   image          String?
   installedAt    DateTime?
+  expiredAt      DateTime?
+  latitude       Float?
+  longitude      Float?
   isArchived     Boolean   @default(false)
   archivedAt     DateTime?
   createdAt      DateTime  @default(now())
