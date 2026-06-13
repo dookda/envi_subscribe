@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   basePath: "/store",
-  experimental: {
-    serverActionsBodySizeLimit: "10mb",
+  serverActions: {
+    bodySizeLimit: "10mb",
   },
   allowedDevOrigins: ["envir-ai.com"],
   env: {
