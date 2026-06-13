@@ -1,1 +1,1 @@
-export { archiveEquipment, createEquipment, updateEquipment } from "@/lib/db/actions";
+export { createEquipment, updateEquipment } from "@/lib/db/actions";
