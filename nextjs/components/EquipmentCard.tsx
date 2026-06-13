@@ -28,7 +28,7 @@ export default function EquipmentCard({ item }: Props) {
 
         {item.image ? (
           <div className="relative aspect-video w-full bg-slate-100">
-            <Image src={item.image} alt={item.equipmentName} fill className="object-contain" unoptimized />
+            <Image src={item.image} alt={item.equipmentName} fill className="object-contain" sizes="(max-width: 640px) 50vw, 33vw" />
           </div>
         ) : null}
         <div className="p-4">
