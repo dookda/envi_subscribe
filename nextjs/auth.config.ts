@@ -3,6 +3,7 @@ import LineProvider from "next-auth/providers/line";
 import { LOGIN_PATH } from "@/lib/base-path";
 
 const authConfig = {
+  trustHost: true,
   providers: [
     LineProvider({
       clientId: process.env.LINE_CLIENT_ID!,
