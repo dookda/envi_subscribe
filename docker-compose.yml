@@ -21,9 +21,9 @@ services:
     image: node:20-alpine
     restart: unless-stopped
     working_dir: /app
-    command: sh -c "npm install && npx prisma generate && npx prisma migrate deploy && npm run dev -- --hostname 0.0.0.0"
+    command: sh -c "npm install && npx prisma generate && npm run build && npx prisma migrate deploy && npm start -- --hostname 0.0.0.0"
     environment:
-      NODE_ENV: development
+      NODE_ENV: production
       NEXTAUTH_URL: ${NEXTAUTH_URL}
       AUTH_SECRET: ${AUTH_SECRET}
       DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?schema=public

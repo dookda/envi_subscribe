@@ -94,6 +94,7 @@ CREATE TABLE public._prisma_migrations (
 --
 
 COPY public."Account" (id, "userId", type, provider, "providerAccountId", refresh_token, access_token, expires_at, token_type, scope, id_token, session_state) FROM stdin;
+cmqbaccount0001line	cmqbw429q0000o65bs8offnet	oauth	line	Ufd66dd59708cfa4fafd767a8495cb5fb	\N	\N	\N	\N	\N	\N	\N
 \.
 
 COPY public."EquipmentItem" (id, "userId", "equipmentName", model, "customerName", location, image, "isArchived", "archivedAt", "createdAt", "updatedAt", "installedAt", "expiredAt", latitude, longitude, "inUse") FROM stdin;
