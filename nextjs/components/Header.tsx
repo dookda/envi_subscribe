@@ -3,7 +3,6 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import { unstable_noStore as noStore } from "next/cache";
 import { auth, signOut } from "@/auth";
-import { LOGIN_PATH } from "@/lib/base-path";
 import { getT, type Lang } from "@/lib/i18n";
 import ThemeToggle from "@/components/ThemeToggle";
 import LangToggle from "@/components/LangToggle";
@@ -18,7 +17,7 @@ export default async function Header() {
 
   const signOutAction = async () => {
     "use server";
-    await signOut({ redirectTo: LOGIN_PATH });
+    await signOut({ redirectTo: "/login" });
   };
 
   return (
