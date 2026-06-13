@@ -64,7 +64,6 @@ const adapter = {
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter,
-  trustHost: true,
   basePath: "/store/api/auth",
   session: { strategy: "jwt" },
   ...authConfig,
