@@ -7,11 +7,10 @@ import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { prisma } from "@/lib/db/prisma";
 import { equipmentSchema } from "@/lib/validation/schemas";
-import { BASE_PATH, LOGIN_PATH } from "@/lib/base-path";
 
 async function getSession() {
     const session = await auth();
-    if (!session?.user?.id) redirect(LOGIN_PATH);
+    if (!session?.user?.id) redirect("/login");
     return session;
 }
 
@@ -47,7 +46,7 @@ export async function createEquipment(formData: FormData) {
         data: { ...result.data, userId: session.user.id, ...(image ? { image } : {}) },
     });
 
-    revalidatePath(BASE_PATH);
+    revalidatePath("/");
     return { success: true };
 }
 
@@ -80,8 +79,8 @@ export async function updateEquipment(id: string, formData: FormData) {
         data: { ...result.data, ...(image ? { image } : {}) },
     });
 
-    revalidatePath(BASE_PATH);
-    revalidatePath(`${BASE_PATH}/equipment/${id}`);
+    revalidatePath("/");
+    revalidatePath(`/equipment/${id}`);
     return { success: true };
 }
 
@@ -94,7 +93,7 @@ export async function deleteEquipment(id: string) {
 
     await prisma.equipmentItem.delete({ where: { id } });
 
-    revalidatePath(BASE_PATH);
+    revalidatePath("/");
     return { success: true };
 }
 
