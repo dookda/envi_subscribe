@@ -20,7 +20,7 @@ async function saveImage(file: File): Promise<string> {
     const uploadsDir = path.join(process.cwd(), "public", "uploads");
     await fs.mkdir(uploadsDir, { recursive: true });
     await fs.writeFile(path.join(uploadsDir, filename), Buffer.from(await file.arrayBuffer()));
-    return `/uploads/${filename}`;
+    return `/api/uploads/${filename}`;
 }
 
 export async function createEquipment(formData: FormData) {
